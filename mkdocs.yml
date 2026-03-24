@@ -1,0 +1,78 @@
+site_name: Biblioteca de Documentações
+site_description: Documentações técnicas dos projetos e automações da área
+site_author: Área de Dados
+
+docs_dir: docs
+site_dir: site
+
+theme:
+  name: material
+  language: pt-BR
+  palette:
+    - scheme: default
+      primary: blue grey
+      accent: blue
+      toggle:
+        icon: material/brightness-7
+        name: Modo escuro
+    - scheme: slate
+      primary: blue grey
+      accent: blue
+      toggle:
+        icon: material/brightness-4
+        name: Modo claro
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+  icon:
+    repo: fontawesome/brands/github
+
+plugins:
+  - search:
+      lang: pt
+
+markdown_extensions:
+  - tables
+  - attr_list
+  - md_in_html
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Alocações:
+    - Affinity: alocacao_affinity.md
+    - Demais Ramos: alocacao_demais_ramos.md
+    - RCO: alocacao_rco.md
+    - Rebalanceamento de Analistas: rebalanceamento_analistas.md
+  - Assistências:
+    - Mawdy: assistencia_mawdy.md
+    - Maxpar: assistencia_maxpar.md
+    - Helppi Natura: helppi_natura.md
+  - Automações & Relatórios:
+    - RD Diários: rd_diarios.md
+    - Ferramenta de Relatórios: ferramenta_relatorios.md
+    - Consultas SQL: relatorio_area_dados.md
+  - Financeiro:
+    - Pagamento de Comissões: pagamento_comissao.md
+    - Notificação de Carteira: notificacao_carteira.md
+  - Dados & Infraestrutura:
+    - Pipelines MongoDB: pipelines_mongodb.md
+    - DBT KOVR / Innoveo: dbt_kovr_innoveo.md
+  - Regulatório:
+    - Ofício SUSEP: oficio_susep.md
