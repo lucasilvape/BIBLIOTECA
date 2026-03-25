@@ -1,12 +1,6 @@
 # 📊 Notificação de Carteira — Extrator & Notificador Automático
 
-![Python](https://img.shields.io/badge/PYTHON-3.11+-3776AB?style=flat-square&logo=python&logoColor=white)
-![Pandas](https://img.shields.io/badge/DATA-PANDAS-150458?style=flat-square&logo=pandas&logoColor=white)
-![SQL Server](https://img.shields.io/badge/DB-SQL%20SERVER-CC2927?style=flat-square&logo=microsoftsqlserver&logoColor=white)
-![XlsxWriter](https://img.shields.io/badge/REPORT-XLSXWRITER-217346?style=flat-square&logo=microsoftexcel&logoColor=white)
-![Outlook](https://img.shields.io/badge/EMAIL-OUTLOOK%20SMTP-0078D4?style=flat-square&logo=microsoftoutlook&logoColor=white)
-![Poetry](https://img.shields.io/badge/DEPS-POETRY-60A5FA?style=flat-square&logo=poetry&logoColor=white)
-![dotenv](https://img.shields.io/badge/ENV-DOTENV-ECD53F?style=flat-square&logo=dotenv&logoColor=black)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white) ![Poetry](https://img.shields.io/badge/Poetry-60A5FA?style=for-the-badge&logo=poetry&logoColor=white) ![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white) ![SQL%20Server](https://img.shields.io/badge/SQL%20Server-CC2927?style=for-the-badge&logo=microsoftsqlserver&logoColor=white)![openpyxl](https://img.shields.io/badge/openpyxl-217346?style=for-the-badge&logo=microsoftexcel&logoColor=white) 
 
 > **Sistema automatizado de gestão de inadimplência e adimplência** para a KOVR Seguradora.
 > Extrai a carteira de parcelas em aberto e a vencer, gera relatórios Excel personalizados e envia notificações por e-mail para corretores, assessorias, congêneres e gestores — tudo de forma automática e rastreável.

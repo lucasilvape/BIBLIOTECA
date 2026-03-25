@@ -1,16 +1,8 @@
-﻿<div align="center">
+﻿# Assistência Helppi Natura
 
-# Assistência Helppi Natura
-
-[![Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
-[![Poetry](https://img.shields.io/badge/Poetry-2.x-60A5FA?style=for-the-badge&logo=poetry&logoColor=white)](https://python-poetry.org/)
-[![Pandas](https://img.shields.io/badge/Pandas-2.x-150458?style=for-the-badge&logo=pandas&logoColor=white)](https://pandas.pydata.org/)
-[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-psycopg2-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.psycopg.org/)
-[![SFTP](https://img.shields.io/badge/SFTP-Paramiko_4.x-2E7D32?style=for-the-badge&logo=openssh&logoColor=white)](https://www.paramiko.org)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white) ![Poetry](https://img.shields.io/badge/Poetry-60A5FA?style=for-the-badge&logo=poetry&logoColor=white) ![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white) ![SFTP](https://img.shields.io/badge/SFTP-FF9800?style=for-the-badge&logo=gnubash&logoColor=white)
 
 > Pipeline ETL para extração e normalização de dados de apólices de seguro residencial Natura do sistema **Innoveo**, gerando arquivos CSV datados e transmitindo-os via SFTP ao parceiro **Kovr/Fácil Seguro**.
-
-</div>
 
 ---
 
@@ -121,7 +113,7 @@ O arquivo gerado segue o padrão de nomenclatura:
 Kovr_Helppi_Natura_YYYYMMDD_HHMM.csv
 ```
 
-<details>
+<details markdown="1">
 <summary>Ver fluxo completo do pipeline</summary>
 
 ### 🏠 Pipeline Principal (`hellpi_natura.py`)

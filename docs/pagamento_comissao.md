@@ -1,6 +1,6 @@
 # Sistema de Pagamento de Comissões de Assessoria
 
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white) ![Poetry](https://img.shields.io/badge/Poetry-60A5FA?style=for-the-badge&logo=poetry&logoColor=white) ![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white) ![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white) ![pyodbc](https://img.shields.io/badge/pyodbc-0078D4?style=for-the-badge&logo=microsoftsqlserver&logoColor=white) ![python-dotenv](https://img.shields.io/badge/python--dotenv-4CAF50?style=for-the-badge&logoColor=white) ![Pandera](https://img.shields.io/badge/Pandera-ED1C40?style=for-the-badge&logoColor=white) ![openpyxl](https://img.shields.io/badge/openpyxl-217346?style=for-the-badge&logo=microsoftexcel&logoColor=white) ![pathlib-types](https://img.shields.io/badge/pathlib--types-607D8B?style=for-the-badge&logoColor=white) ![ipykernel](https://img.shields.io/badge/ipykernel-F37626?style=for-the-badge&logo=jupyter&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white) ![Poetry](https://img.shields.io/badge/Poetry-60A5FA?style=for-the-badge&logo=poetry&logoColor=white) ![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white) ![SQL%20Server](https://img.shields.io/badge/SQL%20Server-CC2927?style=for-the-badge&logo=microsoftsqlserver&logoColor=white) ![Pandera](https://img.shields.io/badge/Pandera-ED1C40?style=for-the-badge&logoColor=white) ![openpyxl](https://img.shields.io/badge/openpyxl-217346?style=for-the-badge&logo=microsoftexcel&logoColor=white) 
 
 Sistema automatizado para processamento e envio de relatórios de comissões para assessorias de corretores de seguros.
 
@@ -370,6 +370,7 @@ resultado = main(enviar_emails=True)
 
 ```
 
+<a name="contato"></a>
 ## 📞 Contato
 
 Para dúvidas, sugestões ou reportar problemas:
@@ -379,14 +380,14 @@ Para dúvidas, sugestões ou reportar problemas:
 | **Email** | [usrpbi@kovr.com.br](mailto:usrpbi@kovr.com.br) |
 <!-- | :material-microsoft-teams: **Teams** | Canal "Equipe de Dados" | -->
 
----
-
 ## 👥 Contribuidores
 
 - **Lucas Silva** - lucas.silva@kev.tech
----
 
-<!-- ## 🕐 Última atualização
 
-> **Data:** 10/03/2026  
+<!-- ---
+
+## Última atualização
+
+> **Data:** 05/03/2026  
 > **Responsável:** Lucas Silva Pereira -->

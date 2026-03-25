@@ -1,0 +1,3242 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentações técnicas dos projetos e automações da área">
+      
+      
+        <meta name="author" content="Área de Dados">
+      
+      
+      
+        <link rel="prev" href="../pipelines_mongodb/">
+      
+      
+        <link rel="next" href="../oficio_susep/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+    
+    
+      
+        <title>DBT KOVR / Innoveo - Kovr Seguradora</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/brand.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  
+  <link rel="icon" type="image/svg+xml" href="https://www.kovr.com.br/assets/icons/logo-mini.svg">
+  <meta name="application-name" content="Kovr Seguradora">
+  <meta property="og:site_name" content="Kovr Seguradora">
+  <meta property="og:title" content="Kovr Seguradora">
+  <meta property="og:image" content="https://kovr.com.br/wp-content/uploads/2022/06/Banner-Novo-Home-Kovr.png">
+  <meta property="og:image:alt" content="Kovr Seguradora">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kovr Seguradora">
+  <meta name="twitter:image" content="https://kovr.com.br/wp-content/uploads/2022/06/Banner-Novo-Home-Kovr.png">
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#dbt_kovr_innoveo" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href=".." title="Kovr Seguradora" class="md-header__button md-logo" aria-label="Kovr Seguradora" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Kovr Seguradora
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              DBT KOVR / Innoveo
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="blue"  aria-label="Modo escuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Modo escuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="blue"  aria-label="Modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Abas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../apache_hop_00_variaveis/" class="md-tabs__link">
+          
+  
+  
+  Apache Hop
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../alocacao_affinity/" class="md-tabs__link">
+          
+  
+  
+  Alocações
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../assistencia_mawdy/" class="md-tabs__link">
+          
+  
+  
+  Assistências
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../rd_diarios/" class="md-tabs__link">
+          
+  
+  
+  Automações & Relatórios
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../pagamento_comissao/" class="md-tabs__link">
+          
+  
+  
+  Financeiro
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../pipelines_mongodb/" class="md-tabs__link">
+          
+  
+  
+  Dados & Infraestrutura
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../oficio_susep/" class="md-tabs__link">
+          
+  
+  
+  Regulatório
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Kovr Seguradora" class="md-nav__button md-logo" aria-label="Kovr Seguradora" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Kovr Seguradora
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Apache Hop
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Apache Hop
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apache_hop_00_variaveis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Variáveis de Ambiente
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apache_hop_01_producao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Produção
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apache_hop_02_sinistros/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sinistros
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apache_hop_99_relatorios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Relatórios
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Alocações
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Alocações
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../alocacao_affinity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Affinity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../alocacao_demais_ramos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Demais Ramos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../alocacao_rco/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RCO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rebalanceamento_analistas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rebalanceamento de Analistas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assistências
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Assistências
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../assistencia_mawdy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mawdy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../assistencia_maxpar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maxpar
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../helppi_natura/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Helppi Natura
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Automações & Relatórios
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Automações & Relatórios
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rd_diarios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RD Diários
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ferramenta_relatorios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ferramenta de Relatórios
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../relatorio_area_dados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Consultas SQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Financeiro
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Financeiro
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pagamento_comissao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pagamento de Comissões
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notificacao_carteira/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notificação de Carteira
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dados & Infraestrutura
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Dados & Infraestrutura
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pipelines_mongodb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pipelines MongoDB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DBT KOVR / Innoveo
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DBT KOVR / Innoveo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sumario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📑 Sumário
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objetivo-do-projeto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Objetivo do Projeto
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 Objetivo do Projeto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#escopo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Escopo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#valor-entregue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Valor Entregue
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arquitetura-de-modelagem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏗️ Arquitetura de Modelagem
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🏗️ Arquitetura de Modelagem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#camadas-detalhadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Camadas Detalhadas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Camadas Detalhadas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-staging-modelsstaging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1️⃣ Staging (models/staging/)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-intermediate-modelsintermediate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2️⃣ Intermediate (models/intermediate/)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-marts-modelsmarts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3️⃣ Marts (models/marts/)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagrama-de-linhagem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Diagrama de Linhagem
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📊 Diagrama de Linhagem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resumo-das-camadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resumo das Camadas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parceiros-por-produto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parceiros por Produto
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#produtos-e-fontes-de-dados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📦 Produtos e Fontes de Dados
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📦 Produtos e Fontes de Dados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sources-configurados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sources Configurados
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estrutura-das-tabelas-fonte" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estrutura das Tabelas Fonte
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#macros-customizadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔧 Macros Customizadas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔧 Macros Customizadas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#macros-de-negocio-macrosregras_negocio_innoveo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Macros de Negócio (macros/regras_negocio_innoveo/)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#macros-duckdb-macrosmacros_duckdb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Macros DuckDB (macros/macros_duckdb/)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qualidade-de-dados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧪 Qualidade de Dados
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧪 Qualidade de Dados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#piramide-de-testes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pirâmide de Testes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-testes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tipos de Testes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracao-do-ambiente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Configuração do Ambiente
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚙️ Configuração do Ambiente">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pre-requisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pré-requisitos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-clone-e-instale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Clone e Instale
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-configure-variaveis-de-ambiente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Configure Variáveis de Ambiente
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-valide-a-conexao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Valide a Conexão
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comandos-principais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 Comandos Principais
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 Comandos Principais">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comandos-essenciais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comandos Essenciais
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#execucao-seletiva" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Execução Seletiva
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentacao-e-linhagem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 Documentação e Linhagem
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentacao-publicada-dbt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 Documentação Publicada (dbt)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🌐 Documentação Publicada (dbt)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gerar-e-servir-localmente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gerar e Servir Localmente
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estrutura" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estrutura
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tags-do-projeto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏷️ Tags do Projeto
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estrutura-de-pastas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📁 Estrutura de Pastas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contato" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📞 Contato
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contribuidores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        👥 Contribuidores
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Regulatório
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Regulatório
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oficio_susep/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ofício SUSEP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sumario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📑 Sumário
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objetivo-do-projeto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Objetivo do Projeto
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 Objetivo do Projeto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#escopo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Escopo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#valor-entregue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Valor Entregue
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arquitetura-de-modelagem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏗️ Arquitetura de Modelagem
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🏗️ Arquitetura de Modelagem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#camadas-detalhadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Camadas Detalhadas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Camadas Detalhadas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-staging-modelsstaging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1️⃣ Staging (models/staging/)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-intermediate-modelsintermediate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2️⃣ Intermediate (models/intermediate/)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-marts-modelsmarts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3️⃣ Marts (models/marts/)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagrama-de-linhagem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Diagrama de Linhagem
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📊 Diagrama de Linhagem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resumo-das-camadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resumo das Camadas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parceiros-por-produto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parceiros por Produto
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#produtos-e-fontes-de-dados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📦 Produtos e Fontes de Dados
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📦 Produtos e Fontes de Dados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sources-configurados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sources Configurados
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estrutura-das-tabelas-fonte" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estrutura das Tabelas Fonte
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#macros-customizadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔧 Macros Customizadas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔧 Macros Customizadas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#macros-de-negocio-macrosregras_negocio_innoveo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Macros de Negócio (macros/regras_negocio_innoveo/)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#macros-duckdb-macrosmacros_duckdb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Macros DuckDB (macros/macros_duckdb/)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qualidade-de-dados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧪 Qualidade de Dados
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧪 Qualidade de Dados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#piramide-de-testes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pirâmide de Testes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-testes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tipos de Testes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracao-do-ambiente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Configuração do Ambiente
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚙️ Configuração do Ambiente">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pre-requisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pré-requisitos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-clone-e-instale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Clone e Instale
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-configure-variaveis-de-ambiente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Configure Variáveis de Ambiente
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-valide-a-conexao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Valide a Conexão
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comandos-principais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 Comandos Principais
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 Comandos Principais">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comandos-essenciais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comandos Essenciais
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#execucao-seletiva" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Execução Seletiva
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentacao-e-linhagem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 Documentação e Linhagem
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentacao-publicada-dbt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 Documentação Publicada (dbt)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🌐 Documentação Publicada (dbt)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gerar-e-servir-localmente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gerar e Servir Localmente
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estrutura" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estrutura
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tags-do-projeto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏷️ Tags do Projeto
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estrutura-de-pastas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📁 Estrutura de Pastas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contato" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📞 Contato
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contribuidores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        👥 Contribuidores
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="dbt_kovr_innoveo">📊 DBT_KOVR_INNOVEO<a class="headerlink" href="#dbt_kovr_innoveo" title="Permanent link">&para;</a></h1>
+<p><img alt="dbt" src="https://img.shields.io/badge/dbt-FF694B?style=for-the-badge&amp;logo=dbt&amp;logoColor=white" /> <img alt="Poetry" src="https://img.shields.io/badge/Poetry-60A5FA?style=for-the-badge&amp;logo=poetry&amp;logoColor=white" /> <img alt="PostgreSQL" src="https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&amp;logo=postgresql&amp;logoColor=white" /></p>
+<p>Pipeline de transformação de dados financeiros da plataforma <strong>Innoveo</strong> para geração de tabelas analíticas de seguros.</p>
+<hr />
+<h2 id="sumario">📑 Sumário<a class="headerlink" href="#sumario" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><a href="#-objetivo-do-projeto">🎯 Objetivo do Projeto</a></p>
+</li>
+<li>
+<p><a href="#️-arquitetura-de-modelagem">🏗️ Arquitetura de Modelagem</a></p>
+</li>
+<li>
+<p><a href="#-diagrama-de-linhagem">📊 Diagrama de Linhagem</a></p>
+</li>
+<li>
+<p><a href="#-produtos-e-fontes-de-dados">📦 Produtos e Fontes de Dados</a></p>
+</li>
+<li>
+<p><a href="#-macros-customizadas">🔧 Macros Customizadas</a></p>
+</li>
+<li>
+<p><a href="#-qualidade-de-dados">🧪 Qualidade de Dados</a></p>
+</li>
+<li>
+<p><a href="#️-configuração-do-ambiente">⚙️ Configuração do Ambiente</a></p>
+</li>
+<li>
+<p><a href="#-comandos-principais">🚀 Comandos Principais</a></p>
+</li>
+<li>
+<p><a href="#-documentação-e-linhagem">📚 Documentação e Linhagem</a></p>
+</li>
+<li>
+<p><a href="#-documentação-publicada-dbt">🌐 Documentação Publicada (dbt)</a></p>
+</li>
+<li>
+<p><a href="#️-tags-do-projeto">🏷️ Tags do Projeto</a></p>
+</li>
+<li>
+<p><a href="#-estrutura-de-pastas">📁 Estrutura de Pastas</a></p>
+</li>
+</ul>
+<hr />
+<h2 id="objetivo-do-projeto">🎯 Objetivo do Projeto<a class="headerlink" href="#objetivo-do-projeto" title="Permanent link">&para;</a></h2>
+<p>Este projeto dbt transforma <strong>dados brutos</strong> da plataforma Innoveo em <strong>tabelas de negócio</strong> prontas para consumo em ferramentas de BI .</p>
+<h3 id="escopo">Escopo<a class="headerlink" href="#escopo" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Aspecto</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Domínio</strong></td>
+<td>Financeiro / Seguros</td>
+</tr>
+<tr>
+<td><strong>Volume</strong></td>
+<td>~20+ produtos de seguros</td>
+</tr>
+<tr>
+<td><strong>Parceiros</strong></td>
+<td>PicPay, WillBank, SemParar, KOVR, XP, Disney, Natura, Metlife</td>
+</tr>
+<tr>
+<td><strong>Destino</strong></td>
+<td>Data Warehouse PostgreSQL (KOVR_DW)</td>
+</tr>
+<tr>
+<td><strong>Consumidores</strong></td>
+<td>Dashboards de BI, Relatórios Financeiros</td>
+</tr>
+</tbody>
+</table>
+<h3 id="valor-entregue">Valor Entregue<a class="headerlink" href="#valor-entregue" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>✅ <strong>Padronização</strong> de dados de múltiplos parceiros em um modelo unificado</p>
+</li>
+<li>
+<p>✅ <strong>Rastreabilidade</strong> completa da linhagem de dados (source → marts)</p>
+</li>
+<li>
+<p>✅ <strong>Qualidade</strong> garantida por testes automatizados</p>
+</li>
+<li>
+<p>✅ <strong>Documentação</strong> auto-gerada e sempre atualizada</p>
+</li>
+</ul>
+<hr />
+<h2 id="arquitetura-de-modelagem">🏗️ Arquitetura de Modelagem<a class="headerlink" href="#arquitetura-de-modelagem" title="Permanent link">&para;</a></h2>
+<p>O projeto segue a arquitetura <strong>Staging → Intermediate → Marts</strong>, padrão recomendado pelo dbt:</p>
+<pre class="mermaid"><code>flowchart LR
+    S["SOURCES&lt;br/&gt;(Raw Data)&lt;br/&gt;&lt;br/&gt;PostgreSQL&lt;br/&gt;Schema: public"]
+    STG["STAGING&lt;br/&gt;(Limpeza)&lt;br/&gt;&lt;br/&gt;VIEW (public)&lt;br/&gt;Schema: staging"]
+    INT["INTERMEDIATE&lt;br/&gt;(Transformações)&lt;br/&gt;&lt;br/&gt;EPHEMERAL&lt;br/&gt;(não persiste)"]
+    M["MARTS&lt;br/&gt;(Tabelas Finais)&lt;br/&gt;&lt;br/&gt;TABLE&lt;br/&gt;Schema: public/financeiro"]
+    BI["BI / Power BI"]
+
+    S --&gt; STG --&gt; INT --&gt; M --&gt; BI</code></pre>
+<h3 id="camadas-detalhadas">Camadas Detalhadas<a class="headerlink" href="#camadas-detalhadas" title="Permanent link">&para;</a></h3>
+<h4 id="1-staging-modelsstaging">1️⃣ Staging (<code>models/staging/</code>)<a class="headerlink" href="#1-staging-modelsstaging" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Aspecto</th>
+<th>Especificação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Propósito</strong></td>
+<td>Limpeza inicial, renomeação de colunas, tipagem básica</td>
+</tr>
+<tr>
+<td><strong>Materialização</strong></td>
+<td><code>VIEW</code></td>
+</tr>
+<tr>
+<td><strong>Schema</strong></td>
+<td><code>staging</code></td>
+</tr>
+<tr>
+<td><strong>Nomenclatura</strong></td>
+<td><code>stg_{source}_{entity}</code> (ex: <code>stg_picpay_cyber_infos</code>)</td>
+</tr>
+<tr>
+<td><strong>Regras</strong></td>
+<td>1:1 com source, sem joins, sem regras de negócio</td>
+</tr>
+</tbody>
+</table>
+<h4 id="2-intermediate-modelsintermediate">2️⃣ Intermediate (<code>models/intermediate/</code>)<a class="headerlink" href="#2-intermediate-modelsintermediate" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Aspecto</th>
+<th>Especificação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Propósito</strong></td>
+<td>Joins complexos, regras de negócio, agregações intermediárias</td>
+</tr>
+<tr>
+<td><strong>Materialização</strong></td>
+<td><code>EPHEMERAL</code> (não persiste no banco)</td>
+</tr>
+<tr>
+<td><strong>Schema</strong></td>
+<td>N/A (efêmero)</td>
+</tr>
+<tr>
+<td><strong>Nomenclatura</strong></td>
+<td><code>int_{domain}_{entity}</code> (ex: <code>int_picpay_cyber</code>)</td>
+</tr>
+<tr>
+<td><strong>Regras</strong></td>
+<td>Joins entre stagings, aplicação de macros de negócio</td>
+</tr>
+</tbody>
+</table>
+<h4 id="3-marts-modelsmarts">3️⃣ Marts (<code>models/marts/</code>)<a class="headerlink" href="#3-marts-modelsmarts" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Aspecto</th>
+<th>Especificação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Propósito</strong></td>
+<td>Tabelas finais para consumo analítico (Fatos e Dimensões)</td>
+</tr>
+<tr>
+<td><strong>Materialização</strong></td>
+<td><code>TABLE</code></td>
+</tr>
+<tr>
+<td><strong>Schema</strong></td>
+<td><code>public</code></td>
+</tr>
+<tr>
+<td><strong>Nomenclatura</strong></td>
+<td><code>fato_{domain}</code>, <code>dim_{entity}</code> (ex: <code>innoveo_fato_bi</code>)</td>
+</tr>
+<tr>
+<td><strong>Regras</strong></td>
+<td>Pronto para BI, documentação obrigatória, testes críticos</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="diagrama-de-linhagem">📊 Diagrama de Linhagem<a class="headerlink" href="#diagrama-de-linhagem" title="Permanent link">&para;</a></h2>
+<pre class="mermaid"><code>---
+id: 2be04212-586f-4bdc-b456-d59856016937
+---
+flowchart LR
+    subgraph SOURCES ["🗄️ SOURCES"]
+        direction TB
+        S1[("PostgreSQL
+Innoveo")]
+    end
+
+    subgraph STAGING ["📥 STAGING"]
+        direction TB
+        STG["44 Views
+─────────
+• PicPay (16)
+• WillBank (4)
+• SemParar (8)
+• KOVR B2C (8)
+• Outros (8)"]
+    end
+
+    subgraph INTERMEDIATE ["⚙️ INTERMEDIATE"]
+        direction TB
+        INT["22 Modelos Ephemeral
+─────────
+Joins + Regras de Negócio"]
+    end
+
+    subgraph MARTS ["📊 MARTS"]
+        direction TB
+        FATO_CYBER["innoveo_financeiro
+_picpay_cyber"]
+        FATO_DEMAIS["innoveo_financeiro
+_demais"]
+        FATO_BI["innoveo_fato_bi"]
+        DIM["dim_info"]
+    end
+
+    subgraph VIEWS ["👁️ VIEWS"]
+        VW1["vw_picpay_cyber
+_resumida"]
+        VW2["vw_demais
+_resumida"]
+    end
+
+    subgraph DUCKDB ["🦆 DUCKDB"]
+        DUCK["3 Tabelas
+Analytics"]
+    end
+
+    subgraph BI ["📈 BI"]
+        direction TB
+        PBI[Power BI]
+        META[Análise]
+        ANALISE[Análise]
+    end
+
+    S1 --&gt; STG
+    STG --&gt; INT
+    INT --&gt; FATO_CYBER
+    INT --&gt; FATO_DEMAIS
+    INT --&gt; FATO_BI
+    INT --&gt; DIM
+    FATO_CYBER --&gt; VW1
+    FATO_DEMAIS --&gt; VW2
+    FATO_CYBER --&gt; DUCK
+    FATO_DEMAIS --&gt; DUCK
+    FATO_BI --&gt; PBI
+    FATO_CYBER --&gt; PBI
+    FATO_DEMAIS --&gt; PBI
+    VW1 --&gt; META
+    VW2 --&gt; META
+    DIM --&gt; ANALISE
+    DUCK --&gt; ANALISE</code></pre>
+<h3 id="resumo-das-camadas">Resumo das Camadas<a class="headerlink" href="#resumo-das-camadas" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Camada</th>
+<th>Materialização</th>
+<th>Qtd</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Staging</strong></td>
+<td>VIEW</td>
+<td>44</td>
+<td>Limpeza e padronização dos dados brutos</td>
+</tr>
+<tr>
+<td><strong>Intermediate</strong></td>
+<td>EPHEMERAL</td>
+<td>22</td>
+<td>Joins e aplicação de regras de negócio</td>
+</tr>
+<tr>
+<td><strong>Marts (Fatos)</strong></td>
+<td>TABLE</td>
+<td>3</td>
+<td>Tabelas de fatos para análise</td>
+</tr>
+<tr>
+<td><strong>Marts (Dimensões)</strong></td>
+<td>TABLE</td>
+<td>1</td>
+<td>Dimensões de suporte</td>
+</tr>
+<tr>
+<td><strong>Views</strong></td>
+<td>VIEW</td>
+<td>2</td>
+<td>Visões resumidas para BI</td>
+</tr>
+<tr>
+<td><strong>DuckDB</strong></td>
+<td>TABLE</td>
+<td>3</td>
+<td>Exportação para analytics local</td>
+</tr>
+</tbody>
+</table>
+<h3 id="parceiros-por-produto">Parceiros por Produto<a class="headerlink" href="#parceiros-por-produto" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Parceiro</th>
+<th>Produtos</th>
+<th>Modelos Staging</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>PicPay</strong></td>
+<td>Cyber, Phone, Auto, Residencial, Saúde, Empréstimo, Vida, Fatura</td>
+<td>16</td>
+</tr>
+<tr>
+<td><strong>SemParar</strong></td>
+<td>Auto, Auto Diário, Viagem, Prestamista</td>
+<td>6</td>
+</tr>
+<tr>
+<td><strong>KOVR B2C</strong></td>
+<td>AP, Phone, Vida, Disney AP</td>
+<td>8</td>
+</tr>
+<tr>
+<td><strong>WillBank</strong></td>
+<td>Carteira, Celular</td>
+<td>4</td>
+</tr>
+<tr>
+<td><strong>Outros</strong></td>
+<td>Natura, Metlife, Banco Fitness, XP</td>
+<td>8</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="produtos-e-fontes-de-dados">📦 Produtos e Fontes de Dados<a class="headerlink" href="#produtos-e-fontes-de-dados" title="Permanent link">&para;</a></h2>
+<h3 id="sources-configurados">Sources Configurados<a class="headerlink" href="#sources-configurados" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Schema</th>
+<th>Produtos</th>
+<th>Tabelas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>picpay</code></td>
+<td>public</td>
+<td>Cyber, Phone, Residencial, Auto, Saúde, Empréstimo, Vida, Fatura</td>
+<td>16</td>
+</tr>
+<tr>
+<td><code>willbank</code></td>
+<td>public</td>
+<td>Carteira, Celular</td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>semparar</code></td>
+<td>public</td>
+<td>Auto, Auto Diário, Viagem, Prestamista</td>
+<td>6</td>
+</tr>
+<tr>
+<td><code>kovr_b2c</code></td>
+<td>public</td>
+<td>AP, Phone, Vida</td>
+<td>6</td>
+</tr>
+<tr>
+<td><code>outros</code></td>
+<td>public</td>
+<td>Disney AP, Natura Residencial, Metlife Celular, Banco Fitness, XP Card</td>
+<td>10</td>
+</tr>
+</tbody>
+</table>
+<h3 id="estrutura-das-tabelas-fonte">Estrutura das Tabelas Fonte<a class="headerlink" href="#estrutura-das-tabelas-fonte" title="Permanent link">&para;</a></h3>
+<p>Cada produto possui duas tabelas principais:</p>
+<table>
+<thead>
+<tr>
+<th>Sufixo</th>
+<th>Conteúdo</th>
+<th>Exemplos de Campos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>*_infos</code></td>
+<td>Dados de emissão/apólice</td>
+<td><code>uuid_bilhete</code>, <code>status_bilhete</code>, <code>data_vigencia</code></td>
+</tr>
+<tr>
+<td><code>*_parcelas</code></td>
+<td>Dados financeiros</td>
+<td><code>valor_parcela</code>, <code>data_pagamento</code>, <code>data_vencimento</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="macros-customizadas">🔧 Macros Customizadas<a class="headerlink" href="#macros-customizadas" title="Permanent link">&para;</a></h2>
+<h3 id="macros-de-negocio-macrosregras_negocio_innoveo">Macros de Negócio (<code>macros/regras_negocio_innoveo/</code>)<a class="headerlink" href="#macros-de-negocio-macrosregras_negocio_innoveo" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Macro</th>
+<th>Propósito</th>
+<th>Exemplo de Uso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>gerar_chave_unica</code></td>
+<td>Cria chave composta para identificação única</td>
+<td><code>{{ gerar_chave_unica('uuid_bilhete', 'uuid_parcela') }}</code></td>
+</tr>
+<tr>
+<td><code>gerar_data_base</code></td>
+<td>Padroniza campos de data</td>
+<td><code>{{ gerar_data_base('data_pagamento') }}</code></td>
+</tr>
+<tr>
+<td><code>ajuste_fif</code></td>
+<td>Aplica regras de cálculo do FIF</td>
+<td><code>{{ ajuste_fif('valor_fif') }}</code></td>
+</tr>
+<tr>
+<td><code>ajuste_cd_evento</code></td>
+<td>Padroniza códigos de evento</td>
+<td><code>{{ ajuste_cd_evento('cd_evento') }}</code></td>
+</tr>
+<tr>
+<td><code>ajuste_nm_evento</code></td>
+<td>Padroniza nomes de evento</td>
+<td><code>{{ ajuste_nm_evento('nm_evento') }}</code></td>
+</tr>
+<tr>
+<td><code>max_data_modificacao</code></td>
+<td>Retorna a maior data de modificação</td>
+<td><code>{{ max_data_modificacao() }}</code></td>
+</tr>
+<tr>
+<td><code>create_indexes</code></td>
+<td>Cria índices nas tabelas finais</td>
+<td><code>{{ create_indexes('tabela', ['col1']) }}</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="macros-duckdb-macrosmacros_duckdb">Macros DuckDB (<code>macros/macros_duckdb/</code>)<a class="headerlink" href="#macros-duckdb-macrosmacros_duckdb" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Macro</th>
+<th>Propósito</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>importar_tabela_duckdb</code></td>
+<td>Importa dados do PostgreSQL para DuckDB</td>
+</tr>
+<tr>
+<td><code>pg_conn</code></td>
+<td>Gerencia conexão com PostgreSQL</td>
+</tr>
+<tr>
+<td><code>etl_duck_agrupamento_emissao</code></td>
+<td>Agrupa dados de emissão para DuckDB</td>
+</tr>
+<tr>
+<td><code>etl_innoveo_fato_bi_cancelamento</code></td>
+<td>Processa cancelamentos para BI</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="qualidade-de-dados">🧪 Qualidade de Dados<a class="headerlink" href="#qualidade-de-dados" title="Permanent link">&para;</a></h2>
+<h3 id="piramide-de-testes">Pirâmide de Testes<a class="headerlink" href="#piramide-de-testes" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>                    ▲
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>                   /█\         Testes de Negócio
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>                  /███\        (Regras específicas)
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>                 /█████\
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>                /███████\      Testes de Integridade
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>               /█████████\     (relationships)
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>              /███████████\
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>             /█████████████\   Testes Básicos
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>            /███████████████\  (unique, not_null)
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>           ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+</code></pre></div>
+<h3 id="tipos-de-testes">Tipos de Testes<a class="headerlink" href="#tipos-de-testes" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Descrição</th>
+<th>Exemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>unique</code></td>
+<td>Garante unicidade de chaves</td>
+<td><code>uuid_bilhete</code> deve ser único</td>
+</tr>
+<tr>
+<td><code>not_null</code></td>
+<td>Garante preenchimento obrigatório</td>
+<td><code>status_bilhete</code> não pode ser nulo</td>
+</tr>
+<tr>
+<td><code>relationships</code></td>
+<td>Valida integridade referencial</td>
+<td><code>uuid_bilhete</code> existe na tabela pai</td>
+</tr>
+<tr>
+<td><code>accepted_values</code></td>
+<td>Valida valores permitidos</td>
+<td><code>status_bilhete</code> in ('Ativo', 'Cancelado')</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="configuracao-do-ambiente">⚙️ Configuração do Ambiente<a class="headerlink" href="#configuracao-do-ambiente" title="Permanent link">&para;</a></h2>
+<h3 id="pre-requisitos">Pré-requisitos<a class="headerlink" href="#pre-requisitos" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Python 3.11+</p>
+</li>
+<li>
+<p>Poetry (gerenciador de dependências)</p>
+</li>
+<li>
+<p>PostgreSQL 15+ (acesso ao DW)</p>
+</li>
+<li>
+<p>Git</p>
+</li>
+</ul>
+<h3 id="1-clone-e-instale">1. Clone e Instale<a class="headerlink" href="#1-clone-e-instale" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/kovr/dbt_innoveo_pipeline.git
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">cd</span><span class="w"> </span>dbt_innoveo_pipeline
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>poetry<span class="w"> </span>install
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>poetry<span class="w"> </span>run<span class="w"> </span>dbt<span class="w"> </span>deps
+</code></pre></div>
+<h3 id="2-configure-variaveis-de-ambiente">2. Configure Variáveis de Ambiente<a class="headerlink" href="#2-configure-variaveis-de-ambiente" title="Permanent link">&para;</a></h3>
+<p><strong>PowerShell:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nv">$env:PG_DBNAME</span> <span class="p">=</span> <span class="s2">&quot;KOVR_DW&quot;</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nv">$env:PG_USER</span> <span class="p">=</span> <span class="s2">&quot;postgres&quot;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nv">$env:PG_PASSWORD</span> <span class="p">=</span> <span class="s2">&quot;sua_senha&quot;</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="nv">$env:PG_HOST</span> <span class="p">=</span> <span class="s2">&quot;10.101.2.20&quot;</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="nv">$env:PG_PORT</span> <span class="p">=</span> <span class="s2">&quot;5432&quot;</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="nv">$env:DBT_PROFILES_DIR</span> <span class="p">=</span> <span class="p">(</span><span class="nb">Resolve-Path</span> <span class="p">.).</span><span class="n">Path</span>
+</code></pre></div></p>
+<p><strong>Bash/Linux:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PG_DBNAME</span><span class="o">=</span><span class="s2">&quot;KOVR_DW&quot;</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PG_USER</span><span class="o">=</span><span class="s2">&quot;postgres&quot;</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PG_PASSWORD</span><span class="o">=</span><span class="s2">&quot;sua_senha&quot;</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PG_HOST</span><span class="o">=</span><span class="s2">&quot;10.101.2.20&quot;</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PG_PORT</span><span class="o">=</span><span class="s2">&quot;5432&quot;</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="nb">export</span><span class="w"> </span><span class="nv">DBT_PROFILES_DIR</span><span class="o">=</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>
+</code></pre></div></p>
+<h3 id="3-valide-a-conexao">3. Valide a Conexão<a class="headerlink" href="#3-valide-a-conexao" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>poetry<span class="w"> </span>run<span class="w"> </span>dbt<span class="w"> </span>debug<span class="w"> </span>--target<span class="w"> </span>dev
+</code></pre></div>
+<hr />
+<h2 id="comandos-principais">🚀 Comandos Principais<a class="headerlink" href="#comandos-principais" title="Permanent link">&para;</a></h2>
+<h3 id="comandos-essenciais">Comandos Essenciais<a class="headerlink" href="#comandos-essenciais" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Validar configuração</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>poetry<span class="w"> </span>run<span class="w"> </span>dbt<span class="w"> </span>debug<span class="w"> </span>--target<span class="w"> </span>prod
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1"># Executar todos os modelos</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>poetry<span class="w"> </span>run<span class="w"> </span>dbt<span class="w"> </span>run<span class="w"> </span>--target<span class="w"> </span>prod
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="c1"># Executar testes</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>poetry<span class="w"> </span>run<span class="w"> </span>dbt<span class="w"> </span><span class="nb">test</span><span class="w"> </span>--target<span class="w"> </span>prod
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="c1"># Gerar documentação</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>poetry<span class="w"> </span>run<span class="w"> </span>dbt<span class="w"> </span>docs<span class="w"> </span>generate<span class="w"> </span>--target<span class="w"> </span>prod
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="c1"># Servir documentação</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>poetry<span class="w"> </span>run<span class="w"> </span>dbt<span class="w"> </span>docs<span class="w"> </span>serve<span class="w"> </span>--target<span class="w"> </span>prod<span class="w"> </span>--port<span class="w"> </span><span class="m">8082</span>
+</code></pre></div>
+<h3 id="execucao-seletiva">Execução Seletiva<a class="headerlink" href="#execucao-seletiva" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># Por tag</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>poetry<span class="w"> </span>run<span class="w"> </span>dbt<span class="w"> </span>run<span class="w"> </span>--select<span class="w"> </span>tag:Financeiro
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>poetry<span class="w"> </span>run<span class="w"> </span>dbt<span class="w"> </span>run<span class="w"> </span>--select<span class="w"> </span>tag:picpay
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="c1"># Por camada</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>poetry<span class="w"> </span>run<span class="w"> </span>dbt<span class="w"> </span>run<span class="w"> </span>--select<span class="w"> </span>staging.*
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>poetry<span class="w"> </span>run<span class="w"> </span>dbt<span class="w"> </span>run<span class="w"> </span>--select<span class="w"> </span>marts.*
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="c1"># Modelo + dependências</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>poetry<span class="w"> </span>run<span class="w"> </span>dbt<span class="w"> </span>run<span class="w"> </span>--select<span class="w"> </span>+innoveo_fato_bi+
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="c1"># Full refresh</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>poetry<span class="w"> </span>run<span class="w"> </span>dbt<span class="w"> </span>run<span class="w"> </span>--full-refresh<span class="w"> </span>--target<span class="w"> </span>prod
+</code></pre></div>
+<hr />
+<h2 id="documentacao-e-linhagem">📚 Documentação e Linhagem<a class="headerlink" href="#documentacao-e-linhagem" title="Permanent link">&para;</a></h2>
+<h2 id="documentacao-publicada-dbt">🌐 Documentação Publicada (dbt)<a class="headerlink" href="#documentacao-publicada-dbt" title="Permanent link">&para;</a></h2>
+<p>A documentação completa do projeto — modelos, linhagem, macros e sources — é gerada automaticamente pelo dbt e está publicada em:</p>
+<blockquote>
+<p><strong>🔗 <a href="https://lucasilvape.github.io/dbt_kovr_innoveo/#!/overview">https://lucasilvape.github.io/dbt_kovr_innoveo/#!/overview</a></strong></p>
+</blockquote>
+<h3 id="gerar-e-servir-localmente">Gerar e Servir Localmente<a class="headerlink" href="#gerar-e-servir-localmente" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>poetry<span class="w"> </span>run<span class="w"> </span>dbt<span class="w"> </span>docs<span class="w"> </span>generate<span class="w"> </span>--target<span class="w"> </span>prod
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>poetry<span class="w"> </span>run<span class="w"> </span>dbt<span class="w"> </span>docs<span class="w"> </span>serve<span class="w"> </span>--target<span class="w"> </span>prod<span class="w"> </span>--port<span class="w"> </span><span class="m">8082</span>
+</code></pre></div>
+<p>Acesse localmente: <strong>http://localhost:8082</strong></p>
+<h3 id="estrutura">Estrutura<a class="headerlink" href="#estrutura" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>docs/
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>├── overview.md      # Página inicial customizada
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>└── common.md        # Blocos de documentação reutilizáveis
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>assets/
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>└── style.css        # Tema customizado (verde KOVR)
+</code></pre></div>
+<hr />
+<h2 id="tags-do-projeto">🏷️ Tags do Projeto<a class="headerlink" href="#tags-do-projeto" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Tag</th>
+<th>Descrição</th>
+<th>Comando</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>staging</code></td>
+<td>Camada de staging</td>
+<td><code>dbt run -s tag:staging</code></td>
+</tr>
+<tr>
+<td><code>intermediate</code></td>
+<td>Camada intermediate</td>
+<td><code>dbt run -s tag:intermediate</code></td>
+</tr>
+<tr>
+<td><code>marts</code></td>
+<td>Camada de marts</td>
+<td><code>dbt run -s tag:marts</code></td>
+</tr>
+<tr>
+<td><code>Financeiro</code></td>
+<td>Domínio financeiro</td>
+<td><code>dbt run -s tag:Financeiro</code></td>
+</tr>
+<tr>
+<td><code>BI</code></td>
+<td>Modelos de BI</td>
+<td><code>dbt run -s tag:BI</code></td>
+</tr>
+<tr>
+<td><code>picpay</code></td>
+<td>Produtos PicPay</td>
+<td><code>dbt run -s tag:picpay</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="estrutura-de-pastas">📁 Estrutura de Pastas<a class="headerlink" href="#estrutura-de-pastas" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>dbt_innoveo_pipeline/
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>├── 📄 dbt_project.yml          # Configuração principal
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>├── 📄 profiles.yml             # Conexões (gitignore)
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>├── 📄 pyproject.toml           # Dependências Python
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>├── 📄 README.md                # Esta documentação
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>│
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>├── 📂 models/
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>│   ├── 📂 staging/             # Views de limpeza
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>│   ├── 📂 intermediate/        # Transformações ephemeral
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>│   ├── 📂 marts/               # Tabelas finais
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>│   └── 📂 duckdb/              # Modelos DuckDB
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>│
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>├── 📂 macros/
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>│   ├── 📂 regras_negocio_innoveo/
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>│   └── 📂 macros_duckdb/
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>│
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>├── 📂 seeds/                   # Dados estáticos (CSV)
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>├── 📂 tests/                   # Testes customizados
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>├── 📂 docs/                    # Documentação customizada
+<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>├── 📂 assets/                  # CSS e imagens
+<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>├── 📂 target/                  # Artefatos (gitignore)
+<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a>└── 📂 logs/                    # Logs (gitignore)
+</code></pre></div>
+<hr />
+<h2 id="contato">📞 Contato<a class="headerlink" href="#contato" title="Permanent link">&para;</a></h2>
+<p>Para dúvidas, sugestões ou reportar problemas:</p>
+<table>
+<thead>
+<tr>
+<th>Canal</th>
+<th>Informação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Email</strong></td>
+<td><a href="mailto:usrpbi@kovr.com.br">usrpbi@kovr.com.br</a></td>
+</tr>
+</tbody>
+</table>
+<!-- | :material-microsoft-teams: **Teams** | Canal "Equipe de Dados" | -->
+
+<hr />
+<h2 id="contribuidores">👥 Contribuidores<a class="headerlink" href="#contribuidores" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Thiago Ramalho</strong> - Thiago.Ramalho@kovr.com.br</li>
+<li><strong>Matheus Araujo</strong> - Matheus.Oliveira@kovr.com.br</li>
+</ul>
+<hr />
+<!-- ## 🕐 Última atualização
+
+> **Data:** 10/03/2026  
+> **Responsável:** Lucas Silva Pereira -->
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Voltar para o topo
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+      
+        <script src="../javascripts/mermaid-init.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,16 +1,6 @@
-<div align="center">
+# Sistema de Redistribuição de Sinistros
 
-#  Sistema de Redistribuição de Sinistros
-
-
-[![Python](https://img.shields.io/badge/Python-3.8+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
-[![Poetry](https://img.shields.io/badge/Poetry-dependency%20manager-60A5FA?style=for-the-badge&logo=poetry&logoColor=white)](https://python-poetry.org/)
-[![SQL Server](https://img.shields.io/badge/SQL%20Server-database-CC2927?style=for-the-badge&logo=microsoftsqlserver&logoColor=white)](https://www.microsoft.com/sql-server)
-[![Git](https://img.shields.io/badge/Git-version%20control-F05032?style=for-the-badge&logo=git&logoColor=white)](https://git-scm.com/)
-![i4Pro API](https://img.shields.io/badge/i4Pro-API%20REST-0078D4?style=for-the-badge&logo=fastapi&logoColor=white)
-[![Jenkins](https://img.shields.io/badge/Jenkins-CI%2FCD-D24939?style=for-the-badge&logo=jenkins&logoColor=white)](https://www.jenkins.io/)
-
-</div>
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white) ![Poetry](https://img.shields.io/badge/Poetry-60A5FA?style=for-the-badge&logo=poetry&logoColor=white) ![SQL%20Server](https://img.shields.io/badge/SQL%20Server-CC2927?style=for-the-badge&logo=microsoftsqlserver&logoColor=white) ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white) ![i4Pro%20API](https://img.shields.io/badge/i4Pro%20API-0078D4?style=for-the-badge&logoColor=white) ![Jenkins](https://img.shields.io/badge/Jenkins-D33835?style=for-the-badge&logo=jenkins&logoColor=white)
 
 ---
 
@@ -36,19 +26,16 @@
 
 ## 📖 Descrição do Projeto
 Este sistema foi desenvolvido para automatizar o processo de redistribuição de sinistros entre analistas. Ele realiza validações nos dados fornecidos, insere as informações no banco de dados e notifica os responsáveis em caso de erros ou falhas críticas.
+
 Além disso, após o processamento com sucesso, o sistema **atualiza o analista responsável no i4Pro** e **registra logs** do retorno da API para auditoria.
 
 ---
 
 ## 🎯 Objetivos
 - Garantir a integridade dos dados antes da inserção no banco.
-
 - Automatizar o processo de redistribuição de sinistros.
-
 - Enviar notificações por e-mail em caso de erros ou falhas.
-
 - Atualizar o analista responsável no i4Pro utilizando o endpoint: "https://...Sinistro/AlteraResponsavelSinistro", após a inserção no banco.
-
 - Registrar logs de cada tentativa de atualização no i4Pro (sucesso/erro).
 
 ---
@@ -67,7 +54,7 @@ Além disso, após o processamento com sucesso, o sistema **atualiza o analista 
 
 ## ⚙️ Fluxo do Processo
 
-<details>
+<details markdown="1">
 <summary>Ver fluxo completo</summary>
 
 ```
@@ -110,7 +97,7 @@ Além disso, após o processamento com sucesso, o sistema **atualiza o analista 
 
 ## 🚀 Roadmap para Clonar e Executar o Projeto
 
-<details>
+<details markdown="1">
 <summary>Ver passo a passo</summary>
 
 ### 1. 🔧 Pré-requisitos
@@ -123,7 +110,7 @@ Além disso, após o processamento com sucesso, o sistema **atualiza o analista 
 - Acesso ao SQL Server e à rede onde estão as pasta de entrada e de processados: `PASTA_ENTRADA = "<caminho_para_pasta_entrada>"`
 `PASTA_PROCESSADOS = "<caminho_para_pasta_processados>"`
 
-- Permissões para instalar dependências
+- Permissões para instalar dependências  
 
 ### 2. 📥 Clonando o repositório
 Abra o terminal e execute:
@@ -209,6 +196,7 @@ Ao final do processo, um relatório é exibido no console com as seguintes infor
 
 ---
 
+<a name="contato"></a>
 ## 📞 Contato
 
 Para dúvidas, sugestões ou reportar problemas:
@@ -218,14 +206,14 @@ Para dúvidas, sugestões ou reportar problemas:
 | **Email** | [usrpbi@kovr.com.br](mailto:usrpbi@kovr.com.br) |
 <!-- | :material-microsoft-teams: **Teams** | Canal "Equipe de Dados" | -->
 
----
-
 ## 👥 Contribuidores
 
 - **Lucas Silva** - lucas.silva@kev.tech
----
 
-<!-- ## 🕐 Última atualização
 
-> **Data:** 10/03/2026  
+<!-- ---
+
+## Última atualização
+
+> **Data:** 05/03/2026  
 > **Responsável:** Lucas Silva Pereira -->

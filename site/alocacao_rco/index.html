@@ -1,0 +1,2346 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentações técnicas dos projetos e automações da área">
+      
+      
+        <meta name="author" content="Área de Dados">
+      
+      
+      
+        <link rel="prev" href="../alocacao_demais_ramos/">
+      
+      
+        <link rel="next" href="../rebalanceamento_analistas/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+    
+    
+      
+        <title>RCO - Kovr Seguradora</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/brand.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  
+  <link rel="icon" type="image/svg+xml" href="https://www.kovr.com.br/assets/icons/logo-mini.svg">
+  <meta name="application-name" content="Kovr Seguradora">
+  <meta property="og:site_name" content="Kovr Seguradora">
+  <meta property="og:title" content="Kovr Seguradora">
+  <meta property="og:image" content="https://kovr.com.br/wp-content/uploads/2022/06/Banner-Novo-Home-Kovr.png">
+  <meta property="og:image:alt" content="Kovr Seguradora">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kovr Seguradora">
+  <meta name="twitter:image" content="https://kovr.com.br/wp-content/uploads/2022/06/Banner-Novo-Home-Kovr.png">
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#alocacao-de-analistas-de-sinistros-rco" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href=".." title="Kovr Seguradora" class="md-header__button md-logo" aria-label="Kovr Seguradora" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Kovr Seguradora
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              RCO
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="blue"  aria-label="Modo escuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Modo escuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="blue"  aria-label="Modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Abas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../apache_hop_00_variaveis/" class="md-tabs__link">
+          
+  
+  
+  Apache Hop
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../alocacao_affinity/" class="md-tabs__link">
+          
+  
+  
+  Alocações
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../assistencia_mawdy/" class="md-tabs__link">
+          
+  
+  
+  Assistências
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../rd_diarios/" class="md-tabs__link">
+          
+  
+  
+  Automações & Relatórios
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../pagamento_comissao/" class="md-tabs__link">
+          
+  
+  
+  Financeiro
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../pipelines_mongodb/" class="md-tabs__link">
+          
+  
+  
+  Dados & Infraestrutura
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../oficio_susep/" class="md-tabs__link">
+          
+  
+  
+  Regulatório
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Kovr Seguradora" class="md-nav__button md-logo" aria-label="Kovr Seguradora" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Kovr Seguradora
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Apache Hop
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Apache Hop
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apache_hop_00_variaveis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Variáveis de Ambiente
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apache_hop_01_producao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Produção
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apache_hop_02_sinistros/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sinistros
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apache_hop_99_relatorios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Relatórios
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Alocações
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Alocações
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../alocacao_affinity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Affinity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../alocacao_demais_ramos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Demais Ramos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RCO
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RCO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sumario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Sumário
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visao-geral-do-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔍 Visão geral do pipeline
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fluxo-detalhado-end-to-end" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔄 Fluxo detalhado (end-to-end)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entradas-saidas-e-estrutura-de-pastas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📁 Entradas, saídas e estrutura de pastas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📁 Entradas, saídas e estrutura de pastas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#entradas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Entradas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#saidas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Saídas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estrutura-do-repositorio-principais-itens" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estrutura do repositório (principais itens)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#roadmap-para-clonar-e-executar-o-projeto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 Roadmap para Clonar e Executar o Projeto
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 Roadmap para Clonar e Executar o Projeto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-pre-requisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Pré-requisitos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-clonando-o-repositorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Clonando o repositório
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-instalando-as-dependencias-e-ativando-o-ambiente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Instalando as dependências e ativando o ambiente
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-configurando-variaveis-de-ambiente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Configurando variáveis de ambiente
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-executando-o-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Executando o pipeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-resultados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Resultados
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#regras-de-notificacao-por-email" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📧 Regras de notificação por e‑mail
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#banco-de-dados-e-conexoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🗄️ Banco de dados e conexões
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#criterios-de-sucesso-e-relatorios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Critérios de sucesso e relatórios
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="✅ Critérios de sucesso e relatórios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#insercao-em-banco" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inserção em banco
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relatorios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relatórios
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#duvidas-frequentes-e-troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ❓ Dúvidas frequentes e troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contato" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📞 Contato
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contribuidores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        👥 Contribuidores
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rebalanceamento_analistas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rebalanceamento de Analistas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assistências
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Assistências
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../assistencia_mawdy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mawdy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../assistencia_maxpar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maxpar
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../helppi_natura/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Helppi Natura
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Automações & Relatórios
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Automações & Relatórios
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rd_diarios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RD Diários
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ferramenta_relatorios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ferramenta de Relatórios
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../relatorio_area_dados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Consultas SQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Financeiro
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Financeiro
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pagamento_comissao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pagamento de Comissões
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notificacao_carteira/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notificação de Carteira
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dados & Infraestrutura
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Dados & Infraestrutura
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pipelines_mongodb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pipelines MongoDB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dbt_kovr_innoveo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DBT KOVR / Innoveo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Regulatório
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Regulatório
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oficio_susep/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ofício SUSEP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sumario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Sumário
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visao-geral-do-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔍 Visão geral do pipeline
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fluxo-detalhado-end-to-end" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔄 Fluxo detalhado (end-to-end)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entradas-saidas-e-estrutura-de-pastas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📁 Entradas, saídas e estrutura de pastas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📁 Entradas, saídas e estrutura de pastas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#entradas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Entradas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#saidas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Saídas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estrutura-do-repositorio-principais-itens" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estrutura do repositório (principais itens)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#roadmap-para-clonar-e-executar-o-projeto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 Roadmap para Clonar e Executar o Projeto
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 Roadmap para Clonar e Executar o Projeto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-pre-requisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Pré-requisitos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-clonando-o-repositorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Clonando o repositório
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-instalando-as-dependencias-e-ativando-o-ambiente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Instalando as dependências e ativando o ambiente
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-configurando-variaveis-de-ambiente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Configurando variáveis de ambiente
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-executando-o-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Executando o pipeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-resultados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Resultados
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#regras-de-notificacao-por-email" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📧 Regras de notificação por e‑mail
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#banco-de-dados-e-conexoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🗄️ Banco de dados e conexões
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#criterios-de-sucesso-e-relatorios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Critérios de sucesso e relatórios
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="✅ Critérios de sucesso e relatórios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#insercao-em-banco" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inserção em banco
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relatorios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relatórios
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#duvidas-frequentes-e-troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ❓ Dúvidas frequentes e troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contato" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📞 Contato
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contribuidores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        👥 Contribuidores
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="alocacao-de-analistas-de-sinistros-rco">Alocação de Analistas de Sinistros (RCO)<a class="headerlink" href="#alocacao-de-analistas-de-sinistros-rco" title="Permanent link">&para;</a></h1>
+<p><img alt="Python" src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&amp;logo=python&amp;logoColor=white" /> <img alt="Poetry" src="https://img.shields.io/badge/Poetry-60A5FA?style=for-the-badge&amp;logo=poetry&amp;logoColor=white" /> <img alt="SQL%20Server" src="https://img.shields.io/badge/SQL%20Server-CC2927?style=for-the-badge&amp;logo=microsoftsqlserver&amp;logoColor=white" /> <img alt="Git" src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&amp;logo=git&amp;logoColor=white" /> <img alt="Jenkins" src="https://img.shields.io/badge/Jenkins-D33835?style=for-the-badge&amp;logo=jenkins&amp;logoColor=white" /></p>
+<p>Automatiza a alocação de sinistros do ramo RCO para analistas, conforme regras de negócio e percentuais definidos por cobertura/causa/esteira. O pipeline valida entradas, cria a distribuição, processa sinistros, aloca, insere no banco (DW) e gera relatórios no terminal, com notificações por e‑mail apenas quando necessário.</p>
+<hr />
+<h2 id="sumario">📋 Sumário<a class="headerlink" href="#sumario" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="#visao-geral">🔍 Visão geral do pipeline</a></li>
+<li><a href="#fluxo-detalhado">🔄 Fluxo detalhado (end-to-end)</a></li>
+<li><a href="#entradas-saidas">📁 Entradas, saídas e estrutura de pastas</a></li>
+<li><a href="#roadmap">🚀 Roadmap para clonar e executar o projeto</a></li>
+<li><a href="#notificacao">📧 Regras de notificação por e‑mail</a></li>
+<li><a href="#banco-dados">🗄️ Banco de dados e conexões</a></li>
+<li><a href="#criterios">✅ Critérios de sucesso e relatórios</a></li>
+<li><a href="#troubleshooting">❓ Dúvidas frequentes e troubleshooting</a></li>
+<li><a href="#contato">📞 Contato</a></li>
+</ul>
+<hr />
+<p><a name="visao-geral"></a></p>
+<h2 id="visao-geral-do-pipeline">🔍 Visão geral do pipeline<a class="headerlink" href="#visao-geral-do-pipeline" title="Permanent link">&para;</a></h2>
+<p>O orquestrador da execução é o arquivo <code>main.py</code>. Ele realiza:</p>
+<ol>
+<li>Validação da estrutura do Excel e da consistência dos percentuais.</li>
+<li>Criação da distribuição por cobertura/causa/esteira/analista.</li>
+<li>Consulta e preparação dos sinistros RCO.</li>
+<li>Cálculo de carga de trabalho e alocação de novos sinistros.</li>
+<li>Preparação e inserção no banco de dados (DW).</li>
+<li>Atualização do analista no i4Pro via API utilizando o endpoint: "https://...Sinistro/AlteraResponsavelSinistro".</li>
+<li>Registro de log da atualização do i4Pro.</li>
+<li>Relatório final no terminal e notificações condicionais.</li>
+</ol>
+<blockquote>
+<p><strong>Observações:</strong>
+- Percentuais devem somar 100% por combinação <code>nm_cobertura</code> + <code>esteira</code>.
+- Resultado final é inserido no DW; não há arquivo Excel como saída em produção.
+- E‑mail apenas em erro ou quando há inserções (opcional).</p>
+</blockquote>
+<hr />
+<p><a name="fluxo-detalhado"></a></p>
+<h2 id="fluxo-detalhado-end-to-end">🔄 Fluxo detalhado (end-to-end)<a class="headerlink" href="#fluxo-detalhado-end-to-end" title="Permanent link">&para;</a></h2>
+<details>
+<summary>Ver fluxo completo</summary>
+<ol>
+<li>Entrada e validação inicial</li>
+<li>Leitura de <code>GRADE_RCO.xlsx</code> (abas: <code>rco</code> e <code>pessoas</code>).</li>
+<li>Validação de estrutura: colunas obrigatórias, analistas existentes, compatibilidade com o banco.</li>
+<li>
+<p>Validação de percentuais: somar 100% por <code>nm_cobertura</code> + <code>esteira</code>. Em falha: imprimir erro e enviar e‑mail; encerrar.</p>
+</li>
+<li>
+<p>Criação da distribuição</p>
+</li>
+<li>
+<p><code>criar_distribuicao_cobertura(...)</code>: transforma percentuais para formato longo, associa <code>id_analista</code> a <code>cd_analista</code> e mantém apenas percentuais &gt; 0.</p>
+</li>
+<li>
+<p>Consulta e processamento de sinistros (RCO)</p>
+</li>
+<li>Consulta por ramos RCO padrão: <code>[23, 28, 82]</code>.</li>
+<li>Filtros (na query): <code>vl_reserva &gt; 0</code>, não jurídico, possui terceiro, esteira definida por regras (DM/DC).</li>
+<li>
+<p>Filtragem por coberturas válidas (presentes na grade).</p>
+</li>
+<li>
+<p>Preparação e carga</p>
+</li>
+<li>
+<p>Seleciona sinistros válidos (ex.: por <code>vl_reserva &gt; 0</code>) e calcula carga por analista/cobertura/esteira.</p>
+</li>
+<li>
+<p>Alocação</p>
+</li>
+<li>Seleciona o "melhor analista" por cobertura/esteira, ponderando percentual configurado e carga atual.</li>
+<li>
+<p>Gera <code>df_sinistros_alocados</code> e atualiza carga prevista.</p>
+</li>
+<li>
+<p>Preparação para inserção</p>
+</li>
+<li>
+<p>Padroniza dataset para banco: <code>nr_sinistro</code>, <code>nm_cobertura</code>, <code>id_analista</code>, <code>cd_analista</code>, <code>dt_alocacao</code>.</p>
+</li>
+<li>
+<p>Inserção no banco</p>
+</li>
+<li>
+<p>Inserção em lote na tabela <code>kovr_dw_bi.dbo.dim_alocacao_analista_sinistro</code>.</p>
+</li>
+<li>
+<p>Relatório final</p>
+</li>
+<li>Estatísticas: já alocados, sem analista, inseridos nesta execução.</li>
+<li>Distribuição por analista impressa apenas quando houver novas alocações.</li>
+</ol>
+</details>
+<hr />
+<p><a name="entradas-saidas"></a></p>
+<h2 id="entradas-saidas-e-estrutura-de-pastas">📁 Entradas, saídas e estrutura de pastas<a class="headerlink" href="#entradas-saidas-e-estrutura-de-pastas" title="Permanent link">&para;</a></h2>
+<h3 id="entradas">Entradas<a class="headerlink" href="#entradas" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>GRADE_RCO.xlsx</code></li>
+<li>Aba <code>rco</code>: colunas mínimas <code>nm_cobertura</code>, <code>nm_causa</code>, <code>esteira</code> e uma coluna por analista com percentuais (0 a 100).</li>
+<li>Aba <code>pessoas</code>: mapeia ao menos <code>cd_analista</code> → <code>id_analista</code>, além de <code>nome_analista</code>, <code>nm_email</code>.</li>
+</ul>
+<h3 id="saidas">Saídas<a class="headerlink" href="#saidas" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Produção: inserção direta no DW (<code>dim_alocacao_analista_sinistro</code>).</li>
+<li>Auxiliares (apenas em desenvolvimento): arquivos como <code>sinistros_validos.xlsx</code>, <code>sinistros_alocados.xlsx</code>, etc., podem ser gerados localmente para diagnóstico.</li>
+</ul>
+<h3 id="estrutura-do-repositorio-principais-itens">Estrutura do repositório (principais itens)<a class="headerlink" href="#estrutura-do-repositorio-principais-itens" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>main.py</code> (orquestração ponta‑a‑ponta)</li>
+<li><code>funcoes.py</code> (lógica de negócio, queries e utilitários)</li>
+<li><code>conexao_banco.py</code> (conexões ao banco)</li>
+<li><code>autenticacao.py</code> (variáveis de ambiente e SMTP)</li>
+<li><code>GRADE_RCO.xlsx</code> (grade RCO)</li>
+</ul>
+<hr />
+<p><a name="roadmap"></a></p>
+<h2 id="roadmap-para-clonar-e-executar-o-projeto">🚀 Roadmap para Clonar e Executar o Projeto<a class="headerlink" href="#roadmap-para-clonar-e-executar-o-projeto" title="Permanent link">&para;</a></h2>
+<details>
+<summary>Ver passo a passo</summary>
+<h3 id="1-pre-requisitos">1. Pré-requisitos<a class="headerlink" href="#1-pre-requisitos" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Python 3.8 ou superior instalado</li>
+<li>Git instalado</li>
+<li><a href="https://python-poetry.org/docs/#installation">Poetry</a> instalado</li>
+<li>Acesso ao SQL Server e à rede onde está a planilha <code>GRADE_RCO.xlsx</code></li>
+<li>Permissões para instalar dependências</li>
+</ul>
+<h3 id="2-clonando-o-repositorio">2. Clonando o repositório<a class="headerlink" href="#2-clonando-o-repositorio" title="Permanent link">&para;</a></h3>
+<p>Abra o terminal e execute:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/KovrSeguradoraBI/ALOCACAO_ANALISTAS_SINISTROS_RCO.git
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd</span><span class="w"> </span>ALOCACAO_ANALISTAS_SINISTROS_RCO
+</code></pre></div></p>
+<h3 id="3-instalando-as-dependencias-e-ativando-o-ambiente">3. Instalando as dependências e ativando o ambiente<a class="headerlink" href="#3-instalando-as-dependencias-e-ativando-o-ambiente" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>poetry<span class="w"> </span>install
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>poetry<span class="w"> </span>shell<span class="w"> </span><span class="o">(</span>caso<span class="w"> </span>você<span class="w"> </span>feche<span class="w"> </span>o<span class="w"> </span>terminal<span class="w"> </span>e<span class="w"> </span>precise<span class="w"> </span>ativar<span class="w"> </span>o<span class="w"> </span>ambiente<span class="w"> </span>virtual<span class="w"> </span>novamente<span class="o">)</span>
+</code></pre></div>
+<h3 id="4-configurando-variaveis-de-ambiente">4. Configurando variáveis de ambiente<a class="headerlink" href="#4-configurando-variaveis-de-ambiente" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Renomeie o arquivo <code>.env.example</code> para <code>.env</code> (ou crie um <code>.env</code> novo).</li>
+<li>Preencha as variáveis conforme necessário:
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>USER_PROD=...
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>PASSWORD_PROD=...
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>USER_DW_BI=...
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>PASSWORD_DW_BI=...
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>USER_EMAIL_BI=...
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>PASSWORD_EMAIL_BI=...
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>URL_PROD=...
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>URL_HOMOLOG=...
+</code></pre></div></li>
+<li>Confirme que o caminho da planilha <code>GRADE_RCO.xlsx</code> está acessível conforme configurado no script.</li>
+<li>Para testes locais, edite a variável <code>PATH</code> no <code>main.py</code> para <code>GRADE_RCO.xlsx</code> ou para o caminho desejado.</li>
+</ul>
+<h3 id="5-executando-o-pipeline">5. Executando o pipeline<a class="headerlink" href="#5-executando-o-pipeline" title="Permanent link">&para;</a></h3>
+<p>Configurações usadas no <code>main.py</code>:
+- PATH do Excel: <code>GRADE_RCO.xlsx</code>
+- Em produção, o path é o seguinte:
+<code>\\awsseg130006\ALOCACAO_SINISTRO_POR_ANALISTA\RCO\GRADE_RCO.xlsx</code>.
+- VARIAVEIS_ALOCACAO: <code>['nm_cobertura', 'nm_causa', 'esteira']</code>
+- Ramos RCO: <code>[23, 28, 82]</code>
+- Listas de e‑mail definidas no código:
+  - <code>DESTINATARIOS_ERROS</code>: recebe falhas de execução/inserção
+  - <code>DESTINATARIOS_VALIDACAO</code>: recebe erros de validação de estrutura/percentuais
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>python<span class="w"> </span>main.py
+</code></pre></div></p>
+<h3 id="6-resultados">6. Resultados<a class="headerlink" href="#6-resultados" title="Permanent link">&para;</a></h3>
+<ul>
+<li>O processo imprime o relatório final no terminal.</li>
+<li>Inserções são feitas diretamente no banco de dados.</li>
+<li>E-mails são enviados apenas em caso de erro ou quando houver novas alocações (conforme configuração).</li>
+</ul>
+<blockquote>
+<p><strong>💡 Dica:</strong>
+Se for rodar em ambiente de produção (ex: Jenkins), garanta que o <code>.env</code> esteja presente no workspace e que as variáveis estejam corretamente preenchidas.</p>
+</blockquote>
+</details>
+<hr />
+<p><a name="notificacao"></a></p>
+<h2 id="regras-de-notificacao-por-email">📧 Regras de notificação por e‑mail<a class="headerlink" href="#regras-de-notificacao-por-email" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Erros: enviar e‑mail com detalhes (falha na preparação/validação, exceções nas consultas/transformações, erro na inserção).</li>
+<li>Sucesso explícito: quando houver inserção no banco, o envio de resumo é opcional (pode ser habilitado conforme necessidade).</li>
+<li>Sem novos sinistros: não enviar e‑mail (execução silenciosa com logs locais).</li>
+</ul>
+<hr />
+<p><a name="banco-dados"></a></p>
+<h2 id="banco-de-dados-e-conexoes">🗄️ Banco de dados e conexões<a class="headerlink" href="#banco-de-dados-e-conexoes" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Leitura: conexão <code>producao_i4</code> (consultas de sinistros/validações).</li>
+<li>Escrita: conexão <code>dw_bi</code> (inserção em <code>kovr_dw_bi.dbo.dim_alocacao_analista_sinistro</code>).</li>
+<li>Consulte <code>conexao_banco.py</code> para aliases e strings de conexão.</li>
+</ul>
+<hr />
+<p><a name="criterios"></a></p>
+<h2 id="criterios-de-sucesso-e-relatorios">✅ Critérios de sucesso e relatórios<a class="headerlink" href="#criterios-de-sucesso-e-relatorios" title="Permanent link">&para;</a></h2>
+<h3 id="insercao-em-banco">Inserção em banco<a class="headerlink" href="#insercao-em-banco" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Sucesso: inserção em lote concluída e resumo impresso no terminal; e‑mail de sucesso é </li>
+<li>Sucesso no i4pro: retorno da API sem erro; imprimir <code>df_resultados</code> quando disponível.opcional.</li>
+<li>Falha: exceção registrada e e‑mail de erro enviado.</li>
+<li>Sem registros novos: imprime "Nenhum sinistro novo para inserir." e não tenta inserir.</li>
+</ul>
+<h3 id="relatorios">Relatórios<a class="headerlink" href="#relatorios" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Sempre imprimir estatísticas gerais.</li>
+<li>Distribuição por analista apenas quando <code>df_sinistros_para_insercao</code> tiver registros (&gt; 0).</li>
+</ul>
+<hr />
+<p><a name="troubleshooting"></a></p>
+<h2 id="duvidas-frequentes-e-troubleshooting">❓ Dúvidas frequentes e troubleshooting<a class="headerlink" href="#duvidas-frequentes-e-troubleshooting" title="Permanent link">&para;</a></h2>
+<details>
+<summary>Ver resposta</summary>
+<ul>
+<li>"Validação passa, mas não há inserções."</li>
+<li>Verifique se os percentuais somam 100% por <code>nm_cobertura</code> + <code>esteira</code> e se os ramos <code>[23, 28, 82]</code> possuem sinistros elegíveis.</li>
+<li>
+<p>Confirme se <code>preparar_sinistros_para_insercao</code> está produzindo linhas e se não são sinistros já alocados anteriormente.</p>
+</li>
+<li>
+<p>"Foram enviados e‑mails quando não houve novos sinistros."</p>
+</li>
+<li>
+<p>Mantenha desativado qualquer envio de e‑mail informativo de "sem novos sinistros". O <code>main.py</code> já está adequado.</p>
+</li>
+<li>
+<p>"Variáveis de e‑mail/banco não encontradas."</p>
+</li>
+<li>Revise <code>.env</code> e os nomes esperados em <code>autenticacao.py</code> e <code>conexao_banco.py</code>.</li>
+</ul>
+</details>
+<hr />
+<p><a name="contato"></a></p>
+<h2 id="contato">📞 Contato<a class="headerlink" href="#contato" title="Permanent link">&para;</a></h2>
+<p>Para dúvidas, sugestões ou reportar problemas:</p>
+<table>
+<thead>
+<tr>
+<th>Canal</th>
+<th>Informação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Email</strong></td>
+<td><a href="mailto:usrpbi@kovr.com.br">usrpbi@kovr.com.br</a></td>
+</tr>
+</tbody>
+</table>
+<!-- | :material-microsoft-teams: **Teams** | Canal "Equipe de Dados" | -->
+
+<h2 id="contribuidores">👥 Contribuidores<a class="headerlink" href="#contribuidores" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Lucas Silva</strong> - lucas.silva@kev.tech</li>
+</ul>
+<!-- ---
+
+## Última atualização
+
+> **Data:** 05/03/2026  
+> **Responsável:** Lucas Silva Pereira -->
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Voltar para o topo
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+      
+        <script src="../javascripts/mermaid-init.js"></script>
+      
+    
+  </body>
+</html>

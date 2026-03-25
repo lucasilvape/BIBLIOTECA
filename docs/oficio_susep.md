@@ -1,17 +1,8 @@
-<div align="center">
-
 # Ofício SUSEP — Automação de Respostas Regulatórias
 
-[![Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
-[![Poetry](https://img.shields.io/badge/Poetry-2.x-60A5FA?style=for-the-badge&logo=poetry&logoColor=white)](https://python-poetry.org/)
-[![Pandas](https://img.shields.io/badge/Pandas-2.x-150458?style=for-the-badge&logo=pandas&logoColor=white)](https://pandas.pydata.org/)
-[![SQL Server](https://img.shields.io/badge/SQL_Server-ODBC_18-CC2927?style=for-the-badge&logo=microsoftsqlserver&logoColor=white)](https://www.microsoft.com/sql-server)
-[![PyMuPDF](https://img.shields.io/badge/PyMuPDF-1.x-00897B?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://pymupdf.readthedocs.io/)
-[![dotenv](https://img.shields.io/badge/dotenv-python--dotenv-ECD53F?style=for-the-badge&logo=dotenv&logoColor=black)](https://pypi.org/project/python-dotenv/)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white) ![Poetry](https://img.shields.io/badge/Poetry-60A5FA?style=for-the-badge&logo=poetry&logoColor=white) ![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white) ![SQL%20Server](https://img.shields.io/badge/SQL%20Server-CC2927?style=for-the-badge&logo=microsoftsqlserver&logoColor=white)
 
 > Automatiza o processamento de ofícios da SUSEP: extrai CPFs e CNPJs de PDFs, consulta múltiplos bancos de dados de seguros e capitalização, e gera relatórios Excel detalhados com envio automático por e-mail.
-
-</div>
 
 ---
 
@@ -128,7 +119,7 @@ Os arquivos gerados seguem o padrão de nomenclatura:
 {nome_do_pdf} processado em DD-MM-AA hHH mMM sSS.xlsx
 ```
 
-<details>
+<details markdown="1">
 <summary>Ver fluxo completo de execução</summary>
 
 ### 📄 Automacao_Susep.py

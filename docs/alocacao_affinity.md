@@ -1,15 +1,6 @@
-<div align="center">
-
 # Alocação de Analistas de Sinistros (Affinity)
 
-[![Python](https://img.shields.io/badge/Python-3.8+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
-[![Poetry](https://img.shields.io/badge/Poetry-dependency%20manager-60A5FA?style=for-the-badge&logo=poetry&logoColor=white)](https://python-poetry.org/)
-[![SQL Server](https://img.shields.io/badge/SQL%20Server-database-CC2927?style=for-the-badge&logo=microsoftsqlserver&logoColor=white)](https://www.microsoft.com/sql-server)
-[![Git](https://img.shields.io/badge/Git-version%20control-F05032?style=for-the-badge&logo=git&logoColor=white)](https://git-scm.com/)
-![i4Pro API](https://img.shields.io/badge/i4Pro-API%20REST-0078D4?style=for-the-badge&logo=fastapi&logoColor=white)
-[![Jenkins](https://img.shields.io/badge/Jenkins-CI%2FCD-D24939?style=for-the-badge&logo=jenkins&logoColor=white)](https://www.jenkins.io/)
-
-</div>
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white) ![Poetry](https://img.shields.io/badge/Poetry-60A5FA?style=for-the-badge&logo=poetry&logoColor=white) ![SQL%20Server](https://img.shields.io/badge/SQL%20Server-CC2927?style=for-the-badge&logo=microsoftsqlserver&logoColor=white) ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white) ![i4Pro%20API](https://img.shields.io/badge/i4Pro%20API-0078D4?style=for-the-badge&logoColor=white) ![Jenkins](https://img.shields.io/badge/Jenkins-D33835?style=for-the-badge&logo=jenkins&logoColor=white)
 
 ---
 
@@ -33,16 +24,17 @@ Automatiza a alocação de sinistros para analistas de acordo com regras de neg�
 ## 🔭 Visão geral do pipeline
 
 O orquestrador da execução é o arquivo `main.py`. Ele realiza:
-1) Validação da estrutura do Excel e da consistência dos percentuais.
-2) Criação da distribuição por cobertura/ramo/analista.
-3) Consulta e preparação dos sinistros.
-4) Cálculo de carga de trabalho e alocação de novos sinistros.
-5) Inserção das novas alocações no DW.
-6) Atualização do analista no i4Pro via API utilizando o endpoint: "https://...Sinistro/AlteraResponsavelSinistro".
-7) Inserção de log da atualização do i4Pro (banco de logs).
-8) Relatório final e notificações condicionais.
 
-Observações importantes:
+1. Validação da estrutura do Excel e da consistência dos percentuais.
+2. Criação da distribuição por cobertura/ramo/analista.
+3. Consulta e preparação dos sinistros.
+4. Cálculo de carga de trabalho e alocação de novos sinistros.
+5. Inserção das novas alocações no DW.
+6. Atualização do analista no i4Pro via API utilizando o endpoint: "https://...Sinistro/AlteraResponsavelSinistro".
+7. Inserção de log da atualização do i4Pro (banco de logs).
+8. Relatório final e notificações condicionais.
+
+**Observações importantes:**
 - A impressão da distribuição “sinistros alocados por analista” só ocorre quando há novas alocações nesta execução.
 - E‑mail: enviar apenas em caso de erro, ou com resumo explícito de sucesso quando houver inserções em banco; silenciar quando não houver novos sinistros.
 - i4Pro: a URL do endpoint é carregada via `.env` (`URL_PROD` / `URL_HOMOLOG`) e depende do parâmetro `ambiente` na função `inserir_analistas_i4pro`.
@@ -60,7 +52,7 @@ Configurações usadas no `main.py` (padrão atual):
 
 ## 🔄 Fluxo detalhado (end-to-end)
 
-<details>
+<details markdown="1">
 <summary>Ver fluxo completo</summary>
 
 1. Entrada e validação inicial
@@ -94,9 +86,9 @@ Configurações usadas no `main.py` (padrão atual):
      - Sem registros novos: imprimir “Nenhum sinistro novo para inserir.” (o `main.py` faz esse controle e não chama a função com DF vazio).
 
 8. Persistência / atualização
-	 - Inserção no DW em `dim_alocacao_analista_sinistro`.
-	 - Atualização do responsável no i4Pro via `POST` para `AlteraResponsavelSinistro`.
-	 - Inserção do log da atualização do i4Pro em `atualiza_analista_sinistro_i4pro`.
+  - Inserção no DW em `dim_alocacao_analista_sinistro`.
+  - Atualização do responsável no i4Pro via `POST` para `AlteraResponsavelSinistro`.
+  - Inserção do log da atualização do i4Pro em `atualiza_analista_sinistro_i4pro`.
 
 </details>
 
@@ -126,7 +118,7 @@ Estrutura do repositório (principais itens)
 
 ## 🚀 Roadmap para Clonar e Executar o Projeto
 
-<details>
+<details markdown="1">
 <summary>Ver passo a passo</summary>
 
 ### 1. Pré-requisitos
@@ -226,17 +218,17 @@ Se for rodar em ambiente de produção (ex: Jenkins), garanta que o `.env` estej
 
 ## ❓ Dúvidas frequentes e troubleshooting
 
-<details>
+<details markdown="1">
 <summary>Ver respostas</summary>
 
-- “A validação passa, mas não há inserções no banco.”
+- "A validação passa, mas não há inserções no banco."
   - Verifique se os percentuais somam 100% por `nm_cobertura`+`nr_ramo` e se os ramos filtrados (ex.: 14 e 71) realmente possuem novos sinistros ativos.
   - Confirme se `preparar_sinistros_para_insercao` está produzindo linhas e se não há duplicidades já inseridas.
-- “O pipeline imprime sucesso de inserção, mas o `main.py` considera falha.”
+- "O pipeline imprime sucesso de inserção, mas o `main.py` considera falha."
   - Ajuste `inserir_sinistros_alocados` para retornar `True` explicitamente em sucesso; `None` ou `False` serão tratados como erro.
-- “Estão sendo enviados e‑mails quando não há novos sinistros.”
-  - Mantenha desativado o envio de e‑mail informativo de ‘sem novos sinistros’. O `main.py` está alinhado para silêncio nessas situações.
-- “Variáveis de e‑mail ou banco não encontradas.”
+- "Estão sendo enviados e‑mails quando não há novos sinistros."
+  - Mantenha desativado o envio de e‑mail informativo de 'sem novos sinistros'. O `main.py` está alinhado para silêncio nessas situações.
+- "Variáveis de e‑mail ou banco não encontradas."
   - Revise `.env` e os nomes esperados por `autenticacao.py` e `conexao_banco.py`.
 
 </details>

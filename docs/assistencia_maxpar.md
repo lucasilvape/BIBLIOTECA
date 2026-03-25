@@ -1,17 +1,8 @@
-﻿<div align="center">
+﻿# Assistência Maxpar
 
-# Assistência Maxpar
-
-[![Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
-[![Poetry](https://img.shields.io/badge/Poetry-2.x-60A5FA?style=for-the-badge&logo=poetry&logoColor=white)](https://python-poetry.org/)
-[![Pandas](https://img.shields.io/badge/Pandas-2.x-150458?style=for-the-badge&logo=pandas&logoColor=white)](https://pandas.pydata.org/)
-[![SQL Server](https://img.shields.io/badge/SQL_Server-ODBC_18-CC2927?style=for-the-badge&logo=microsoftsqlserver&logoColor=white)](https://www.microsoft.com/sql-server)
-[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-psycopg2-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.psycopg.org/)
-[![SFTP](https://img.shields.io/badge/SFTP-Paramiko_4.x-2E7D32?style=for-the-badge&logo=openssh&logoColor=white)](https://www.paramiko.org)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white) ![Poetry](https://img.shields.io/badge/Poetry-60A5FA?style=for-the-badge&logo=poetry&logoColor=white) ![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white) ![SQL%20Server](https://img.shields.io/badge/SQL%20Server-CC2927?style=for-the-badge&logo=microsoftsqlserver&logoColor=white) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white) ![SFTP](https://img.shields.io/badge/SFTP-FF9800?style=for-the-badge&logo=gnubash&logoColor=white)
 
 > Pipeline ETL multi-ramo para extração e normalização de dados de apólices ativas dos sistemas **i4Pro** e **Innoveo**, gerando arquivos CSV datados e transmitindo-os via SFTP ao parceiro **Maxpar**.
-
-</div>
 
 ---
 
@@ -140,7 +131,7 @@ F_KOVR_VIDA_YYYYMMDD.csv
 F_KOVR_VIDA_YYYYMMDD.zip    # versão comprimida do ramo Vida
 ```
 
-<details>
+<details markdown="1">
 <summary>Ver fluxo completo por ramo</summary>
 
 ### 🚗 Auto (`Auto/main_auto.py`)

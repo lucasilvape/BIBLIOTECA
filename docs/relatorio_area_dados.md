@@ -1,5 +1,7 @@
 ﻿# Repositório de Consultas SQL
 
+![SQL%20Server](https://img.shields.io/badge/SQL%20Server-CC2927?style=for-the-badge&logo=microsoftsqlserver&logoColor=white) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white)
+
 <!-- ## 🎯 O Porquê -->
 
 Esse repositório é a nossa fonte da verdade. O objetivo é simples: **acabar com query perdida em e-mail ou área de trabalho e garantir que todo mundo use a mesma regra.**

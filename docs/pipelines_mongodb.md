@@ -1,8 +1,7 @@
 
 # Pipelines MongoDB
 
-
-![Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white) ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white) ![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white) ![Pandera](https://img.shields.io/badge/Pandera-ED1C40?style=for-the-badge&logoColor=white) ![Poetry](https://img.shields.io/badge/Poetry-60A5FA?style=for-the-badge&logo=poetry&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white) ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white) ![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white) ![Poetry](https://img.shields.io/badge/Poetry-60A5FA?style=for-the-badge&logo=poetry&logoColor=white)
 
 
 ---
@@ -58,10 +57,13 @@ flowchart LR
         I --> J[(PostgreSQL\nData Warehouse)]
     end
 
-    style EXTRACT fill:#e8f5e9,stroke:#2e7d32
-    style TRANSFORM fill:#fff3e0,stroke:#ef6c00
-    style LOAD fill:#e3f2fd,stroke:#1565c0
-    style F fill:#ffcdd2,stroke:#c62828
+    style EXTRACT fill:#e8f5e9,stroke:#2e7d32,color:#1b5e20,stroke-width:2px
+    style TRANSFORM fill:#fff3e0,stroke:#ef6c00,color:#8a3c00,stroke-width:2px
+    style LOAD fill:#e3f2fd,stroke:#1565c0,color:#0d47a1,stroke-width:2px
+    style F fill:#ffcdd2,stroke:#c62828,color:#7f1d1d,stroke-width:2px
+
+    classDef default color:#0f172a,stroke:#334155,stroke-width:1.5px;
+    linkStyle default stroke:#64748b,stroke-width:2px;
 ```
 <!-- 
 ### Fluxo Detalhado

@@ -1,11 +1,6 @@
 # 📊 DBT_KOVR_INNOVEO
 
-[![dbt](https://img.shields.io/badge/dbt-1.10.10-FF694B?style=for-the-badge&logo=dbt&logoColor=white)](https://www.getdbt.com/)
-[![Poetry](https://img.shields.io/badge/Poetry-2.x-60A5FA?style=for-the-badge&logo=poetry&logoColor=white)](https://python-poetry.org/)
-[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15%2B-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
-[![SQL (Jinja2)](https://img.shields.io/badge/SQL-Jinja2-005C84?style=for-the-badge&logo=sql&logoColor=white)](https://docs.getdbt.com/docs/build/sql-conventions)
-[![Python](https://img.shields.io/badge/Python-3.11%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
-[![License](https://img.shields.io/badge/License-Proprietary-red?style=for-the-badge)]()
+![dbt](https://img.shields.io/badge/dbt-FF694B?style=for-the-badge&logo=dbt&logoColor=white) ![Poetry](https://img.shields.io/badge/Poetry-60A5FA?style=for-the-badge&logo=poetry&logoColor=white) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white)
 
 
 
@@ -71,34 +66,15 @@ Este projeto dbt transforma **dados brutos** da plataforma Innoveo em **tabelas 
 
 O projeto segue a arquitetura **Staging → Intermediate → Marts**, padrão recomendado pelo dbt:
 
-```
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                           ARQUITETURA DE CAMADAS                            │
-├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                             │
-│   ┌─────────────┐      ┌─────────────────┐      ┌─────────────────────┐     │
-│   │   SOURCES   │ ──▶ │     STAGING      │ ──▶ │    INTERMEDIATE     │     │
-│   │  (Raw Data) │      │   (Limpeza)     │      │  (Transformações)   │     │
-│   └─────────────┘      └─────────────────┘      └──────────┬──────────┘     │
-│         │                     │                            │                │
-│    PostgreSQL            VIEW (public)              EPHEMERAL               │
-│    Schema: public        Schema: staging            (não persiste)          │
-│                                                            │                │
-│                                                            ▼                │
-│                                                 ┌─────────────────────┐     │
-│                                                 │       MARTS         │     │
-│                                                 │  (Tabelas Finais)   │     │
-│                                                 └─────────────────────┘     │
-│                                                          │                  │
-│                                                      TABLE                  │
-│                                               Schema: public/financeiro     │
-│                                                          │                  │
-│                                                          ▼                  │
-│                                                 ┌─────────────────────┐     │
-│                                                 │     BI / Power BI   │     │
-│                                                 └─────────────────────┘     │
-│                                                                             │
-└─────────────────────────────────────────────────────────────────────────────┘
+```mermaid
+flowchart LR
+    S["SOURCES<br/>(Raw Data)<br/><br/>PostgreSQL<br/>Schema: public"]
+    STG["STAGING<br/>(Limpeza)<br/><br/>VIEW (public)<br/>Schema: staging"]
+    INT["INTERMEDIATE<br/>(Transformações)<br/><br/>EPHEMERAL<br/>(não persiste)"]
+    M["MARTS<br/>(Tabelas Finais)<br/><br/>TABLE<br/>Schema: public/financeiro"]
+    BI["BI / Power BI"]
+
+    S --> STG --> INT --> M --> BI
 ```
 
 ### Camadas Detalhadas
@@ -480,17 +456,26 @@ dbt_innoveo_pipeline/
 
 ---
 
-## 📞 Suporte
+## 📞 Contato
 
-- **Email:** usrpbi@kovr.com.br
+Para dúvidas, sugestões ou reportar problemas:
+
+| Canal | Informação |
+|-------|------------|
+| **Email** | [usrpbi@kovr.com.br](mailto:usrpbi@kovr.com.br) |
+<!-- | :material-microsoft-teams: **Teams** | Canal "Equipe de Dados" | -->
 
 ---
 
-<p align="center">
-  <sub>Desenvolvido pela Equipe de Dados KOVR</sub>
+## 👥 Contribuidores
 
-  <!-- <sub>Versão 1.0.0 | Última atualização: Fevereiro 2026</sub> -->
-</p>
+- **Thiago Ramalho** - Thiago.Ramalho@kovr.com.br
+- **Matheus Araujo** - Matheus.Oliveira@kovr.com.br
+---
 
+<!-- ## 🕐 Última atualização
+
+> **Data:** 10/03/2026  
+> **Responsável:** Lucas Silva Pereira -->
 
  

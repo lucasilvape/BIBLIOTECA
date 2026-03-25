@@ -1,16 +1,8 @@
-<div align="center">
-
 # Alocação de Analistas de Sinistros (RCO)
 
-[![Python](https://img.shields.io/badge/Python-3.8+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
-[![Poetry](https://img.shields.io/badge/Poetry-dependency%20manager-60A5FA?style=for-the-badge&logo=poetry&logoColor=white)](https://python-poetry.org/)
-[![SQL Server](https://img.shields.io/badge/SQL%20Server-database-CC2927?style=for-the-badge&logo=microsoftsqlserver&logoColor=white)](https://www.microsoft.com/sql-server)
-[![Git](https://img.shields.io/badge/Git-version%20control-F05032?style=for-the-badge&logo=git&logoColor=white)](https://git-scm.com/)
-[![Jenkins](https://img.shields.io/badge/Jenkins-CI%2FCD-D24939?style=for-the-badge&logo=jenkins&logoColor=white)](https://www.jenkins.io/)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white) ![Poetry](https://img.shields.io/badge/Poetry-60A5FA?style=for-the-badge&logo=poetry&logoColor=white) ![SQL%20Server](https://img.shields.io/badge/SQL%20Server-CC2927?style=for-the-badge&logo=microsoftsqlserver&logoColor=white) ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white) ![Jenkins](https://img.shields.io/badge/Jenkins-D33835?style=for-the-badge&logo=jenkins&logoColor=white)
 
 Automatiza a alocação de sinistros do ramo RCO para analistas, conforme regras de negócio e percentuais definidos por cobertura/causa/esteira. O pipeline valida entradas, cria a distribuição, processa sinistros, aloca, insere no banco (DW) e gera relatórios no terminal, com notificações por e‑mail apenas quando necessário.
-
-</div>
 
 ---
 
@@ -32,14 +24,15 @@ Automatiza a alocação de sinistros do ramo RCO para analistas, conforme regras
 ## 🔍 Visão geral do pipeline
 
 O orquestrador da execução é o arquivo `main.py`. Ele realiza:
-1) Validação da estrutura do Excel e da consistência dos percentuais.
-2) Criação da distribuição por cobertura/causa/esteira/analista.
-3) Consulta e preparação dos sinistros RCO.
-4) Cálculo de carga de trabalho e alocação de novos sinistros.
-5) Preparação e inserção no banco de dados (DW).
-6) Atualização do analista no i4Pro via API utilizando o endpoint: "https://...Sinistro/AlteraResponsavelSinistro".
-7) Registro de log da atualização do i4Pro.
-8) Relatório final no terminal e notificações condicionais.
+
+1. Validação da estrutura do Excel e da consistência dos percentuais.
+2. Criação da distribuição por cobertura/causa/esteira/analista.
+3. Consulta e preparação dos sinistros RCO.
+4. Cálculo de carga de trabalho e alocação de novos sinistros.
+5. Preparação e inserção no banco de dados (DW).
+6. Atualização do analista no i4Pro via API utilizando o endpoint: "https://...Sinistro/AlteraResponsavelSinistro".
+7. Registro de log da atualização do i4Pro.
+8. Relatório final no terminal e notificações condicionais.
 
 > **Observações:**
 > - Percentuais devem somar 100% por combinação `nm_cobertura` + `esteira`.
@@ -51,7 +44,7 @@ O orquestrador da execução é o arquivo `main.py`. Ele realiza:
 <a name="fluxo-detalhado"></a>
 ## 🔄 Fluxo detalhado (end-to-end)
 
-<details>
+<details markdown="1">
 <summary>Ver fluxo completo</summary>
 
 1. Entrada e validação inicial
@@ -111,7 +104,7 @@ O orquestrador da execução é o arquivo `main.py`. Ele realiza:
 <a name="roadmap"></a>
 ## 🚀 Roadmap para Clonar e Executar o Projeto
 
-<details>
+<details markdown="1">
 <summary>Ver passo a passo</summary>
 
 ### 1. Pré-requisitos
@@ -212,7 +205,7 @@ python main.py
 <a name="troubleshooting"></a>
 ## ❓ Dúvidas frequentes e troubleshooting
 
-<details>
+<details markdown="1">
 <summary>Ver resposta</summary>
 
 - "Validação passa, mas não há inserções."
